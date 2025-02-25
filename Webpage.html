@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: whitesmoke;
+        }
+        nav {
+            background: #124e66;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background: #e7717d;
+            color: white;
+            border-radius: 5px;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+        h1{
+            font-style: italic;
+            color: darkmagenta;
+        }
+        .product-details {
+            max-width: 400px;
+            margin-left: 20px;
+        }
+        .price {
+            font-size: 1.5em;
+            color: #9a1750;
+        }
+        .add-to-cart {
+            background: #ff5722;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .add-to-cart:hover {
+            background: #e64a19;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #124e66;
+            color: whitesmoke;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            .product {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-details {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://www.samsung.com/in/?srsltid=AfmBOorZnCBdeNT7mdcjNa4MT00VGM99t7I88OxTmCtQ2552RDGUDKey">Home</a></li>
+                <li><a href="https://www.samsung.com/in/offer/">Shop</a></li>
+                <li><a href="https://www.samsung.com/in/support/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="product">
+            <div class="product-image">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQDw8PEA8ODw4PDg8ODw0NEA8NDw0PFREWFxURFRUYHSkhGBonGxUVITEhJSorLi4uFx8zODMsNygtLisBCgoKDg0OFxAPGi0lIB4rLi0vLS0tLSwuListMS0tLS0tLSstLS0rLjcrKy0rLS0tKystLSstLS0tKy0tLSstLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABgIDBAUHAQj/xABNEAABAwIBBQkLCQUHBQAAAAABAAIDBBEFBhIhMVEHE0FTVGFxk9EUFyIyUoGSobGz0hY1QnJ0g5GjwSMkMzSCFUNic5SisiVEwuLw/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAJREBAQACAgECBgMAAAAAAAAAAAECEQMSEyFBBDEyUXHwIzNh/9oADAMBAAIRAxEAPwDuKIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIsXEa+OnjMkhNr2AGlznbANq0Dss476IXn+poKCUoosctGcQ/0mrz5as4h/pNQSpFFPltHxD/AEmrz5bx8RJ6TUEsRRI5cx8RJ6TV58uo+Ik9JqCXIoh8vI+Ik9Jq8OXsXJ5PSagmCKHfL6Lk8vpMXny/i5PL6TEEyRQw7oMXJ5fSYvO+FFyeX0mIJoihEm6JH9GmkP1pGt/Qq33xm8ld1w+FBO0UHZujR/SppB9WRrvaAqTukR8mk6xvYgnSKDDdJh4aaXzPYU75UHJpvSj7UE5RQR26bAP+2n9KPtW2yfy1pqyQQgSRSuvmNkzbSWFyGuB124DZBJUREBERAREQEREESy/dZsGz9qfOA3tUQupZuhnwaf772MUOzlFi89hGv2hY8kzRrPMjnqg22BFeslDgCNIKFyp1cypJQelypLl4SqSgEqklCVSSgXVJchKtkoPS5Uly8JVBKD0uVJcqSVSXIKi5UFy8JVJKD0lW3yAX5hc9H/wQlUuQRI5WSl+cI27zn5ttOd+N9fmU6yZl/faNzdGdU0x2aDKP0KirMmoWyZ4va9ww8HQVKMnP56jHB3VTe+aqjv6IiIIiICpkkDWlziGtaC5znGwaBrJKqUO3XZnMwWtLSQXMYwkaDml7QQgxqvdbwaN5Z3S99jbOihlkYeggK134sG46f/TT9i4Zkrk82sExfI6NsW9gBgaS4uztd9Q8H1rY1OSETNUsp6QzsXWcOdm4zcpPR0HK7dJwyqEQinkuzfM7PgmZ4wbb6PMVHTlfRccerl+FRCTJ9g/vJP8Ab2Kw7BGeW/8A29iniyXvE0+V9Dxx6uX4V4cr6Ljj1cnYoScGZ5b/APaqThDPLf6lPHkd4mxyvouNPVydiHK6h489VN8KgxwpvlO9SoOGN8p3qTx5HeJ0crqHjz1U3wqk5W0PHnqpvhUEOGt8p3qVJw9vlO9SeOneJ2craLjj1U3wrw5W0XHHqpvhUCNCPKd6lSaIeU71KdKdk8OVlFxx6qb4VScq6Ljj1U3wqBmjG0+pUmkG0+pOlXsnhyqouO/Lm+FUnKmj478ub4VAzSjafUrboBtKnWnZPjlRR8d+XN8KpOU9Hx35cvwqBNhvwlUuispo2npymo+O/Ll+FUnKak478uX4VB4qcO4T6kdTAcJ9SvU2n1JjFPM7Njla53A0hzCegOAus0lcwiJZIwg6Wva4HYQRZdNJUUJWdk5/P0f2qm98Fr7rNydd+/0ei/71TbNH7ZqivoNERVkREQFCt2T5krOiP3jVNVCd2T5krPuveNQcg3Mh4FZ9aD2SLe4gzWtJuXeJWfWg9kiktdHrX0+GfxT993nz+qovUtWC9bWsjWslC55RYsOKtuKqcrbisKpcVacVW4q04qCklUEqpytkqVVJKoKqKoKjSkqkr0qkqUUlWnq6Vbcs0UxDWrcmsrIhboceZWJNaxWovUw0JIrsDPBVuZX2GCfHHS32rqU8IABBOdmhzr2tZ2qy5Z9MdI9q6wPCYznEkR6Rpb7QudajButhk3/P0f2qm981a5bDJv8An6P7XTe+aor6EREVZEREBQndm+ZKz7r3jVNlCN2b5krPuveNQci3LD4NZ9aD2SKXVTbqH7lvi1n1oPZIpnKvrfD/ANU/fd5s/qrQVsWtaWoYpPVRrS1cKzniStJIFYcsyeNYjwuFjS04q2SqnK24rKqSVbKqKoKy1HhVBXpVJRVJVJXpXiyPCqSFXZVRx3ICaFWZaK/lED9ViBtytpibc3Nj8hun6ztPsssaihzndCmU9dLF7e7NHQsCpK2tToC09Q5TJYxR4w6R7V1Skf4Eg4WObIPxsf0XKh4w6R7V1KgP7Qt8trmfiNHrAXKtRanbZ7hwX0dB0hZ2TQ/f6P7XTe+asWoHina2x6W6OxZmTf8APUf2um981RX0CiIqyIiIChG7P8yVn3XvWqbqD7tHzHWfde9ag5HuVtvHWnY6n9kil8hXONz3GO5p3h38KbNY/mIvY+srpVZHbSNLSLgjUQvq/C5S8cn2efknrtgzLXVMd1sJCsWVdrNue2jqYVrZo1IJ2LWzxLhlg3K00jVYcFsZoliSRrhcWtsRyoKvuarTmrFjUq0VSVcIVJCml2tlLKvNVQanU2oDVt8HpQA6Z48CMZx/xHgb5zYLHw6hdK9rWgkk20LZY5M2NrYIyC2M+E4apJbWJ6G6R5zzLpMdTdZ3toqt5c8k6SSSeknSs+khzGXOsrHoafOdc6gsitntoC5T710YVbKtVKVkzvWI9ccrtVoeMOke1dMjdmuDvJcD+BXM2+MOke1dMsstRmVjPGA1NkuPquF1fybH79R/a6b3zVadpa0+VFb+ph7Ar+To/fqP7XTe9aorvqIirIiIgKD7tXzHWfc+9apwoNu1/MdZ9z75qD5sw82zvN+q6HknlA1zRTTu0ao5DwHYVzqgaSHHZb9VlNcQu/FncNWM5TbqtZCWGxWC8rTZPZWAAQVVzHqZMNLo+Y7QpDVUugPYQ+Nwu17DnNcOYr6WHJM5uPPljY10pWJKFkSlY0hVrLDlYsSSNZ0hWO9c7i1KwHxqw6NZzwrLgsXBdsMsVBYspwVGas9F2sBiyaOidI4NaCSSthhmDSTHQLNGkuOgAbSeBbaeshpGFsJu/U6o4b7Ih/5fhtWphJ60W6gsoonRtI38i0kg/uQfoN/xn1dOqLWMjtg4BsCuTSuldsbwDZz9KrLwwWGvavPyZ9vw6Y46XJJAxuaFqqiW69nmusR7lwyy22oe5WiqyqVgWx4w6W+1dNsuZ/SHS32rp4CjUZELvAB8iQH+lwsfYsvJ9tq6kGyrpx+c1YlOLh7fKY63SNI9izsA01tGdtRSnz762/rUV3dERVkREQFBd2z5irOmD3zFOlBd2z5irOmD3zEHz7kxAHtnB4DH7HKWU+5jikzN9jpw1jhdomkZE942hpNx57LU7kYY/FKWKSxZJO0kHUSyOR7Qdt3NaPOpvidc6sxashq8Q/s9tPJM2J8jnNYwMkDY2tGe2znNOfe+nWu2OrjIy5jieHT0sroKiJ8MzLZ0cgsbHUQRocOcXCv4Pj81MSIpBmnS+F/hxO6W8HSLHnXY6/JHu6swp9XiDMQp3xvzAyFsG+wRxh189riXhzsy52E2tdarDMsGT4lBRPwvDxh5qmw08bYLT07g+0cl/F1gXaGiwJ0m2lLZ6wa3DXR1lFNXFraaKCVsMry8Pj3x2Zm5ttNv2jdYsL69CxJsLcRnRlsjDqfG4PafOFKcWoQ+ix+nZaIS5QUMDSxoAjD30TbgauFa3KfLZmDVb8No8PpDTUrI21Bma7fqpzomyE54OjwXDwnB2nmXfD4q/LKMXjiKzU7xrBWJIw7Cuo5U5TR0eKYezeA+kq6OEPpt5ZI875K5rXDRnF4uNHDpGuxXmXVRBg8AijijfNWySkTyxOLIoG/3YcPp2cBrB1nYtznxrPjrlLmE8BWThWC1FXM2CFmdI/OzQ5wYPBaXHSdGoFdKma3Eo8Jq6aGC1XJ3HV5sbhvUkec57gARYWZKbn/BtUZy4yxYK+aOltHFTuNM3eI423czQ851r+NnDRwAK+XGnSvI9yzEz40UY++jP6rWsoqWC+e7fnt1tYQGA87z+l1LcQq5qjD8nGCV7HVtWYZJS9xeGOec434XWva/DZYWVOWsVJWS4c3DKF+G072wzxyxl884zQXva69g7TouHE2vfTo5zns/1ro0Innq4KySmERgoImzTta7e2MYQ8gga5D+zcoeXmQlznX/AE5uZd9rzT0tRjz3UzH08eEUMslMxrWNmaDWksIAtptY8yiGS2NR4+ajDauio4XCmkmpKmjjMTqUsLWgaSfKbsBsQRpXDLmuXzamMjnuGUU1TMympYnTTPvmsbYaBrcSbBrRtJss7KfIfEqCLf6in/Y3DXSwvbM1hJsA62kXJAva1yBfSqtzLKqPDqwzzse6CendTyOi/iRBzmuD26RfS3SL34RpFjJHYDBDAzEsOxKavwujrqasrKCYvbJGGStc55ZoDnZt9bRfSblZu60jh3MMZMHdHcZzc3P3nfI+6M3bvd73/wAOvmvoUewXApqyojpYGh08pcGMc4RglrC43J1aGldyocHNRjRxyDFaeXD2x769rJXGSOPeCwwubqbHcF5vbSDouLrnm59XMnypimjFop63EZoxa1o3xVDm6ODQQszQwcT3L8TpojNNDG2Nro2EiaJxzpJGxtFgfKcFlHcfxfk8X+oh7Vtsp8Pw5tTLJHjk89V/aUZ/s1wkEeea1ufHp0Wbdx/pUg3RsOw1+IzOqcenoZiyLOpIxJmsAjFjo0aRp86bNODStAeLartXTgFy6R/hA21ZpsvpSm3NQ9jH92EZ7GutvF7XF7eOs1YgcBs5p2EX6OFbDJ6O1bSt4WVsLfNvrT2qYncwHLPyP/daLBY+5cYjjfZ2bNvdyLBzvCiD7cGlwcorsCIiqCIiAoLu2/MVZ0we+Yp0oLu2j/oVZ0we/Yg+Z8Pq3xPbJG5zJGPZIx7TZzHtN2uHOCAumd8uhqQ2TEcGhqaxrQ01ETxG2ew0Z7SNXMc4excouqg9WUdCxDdGq5q6CuaI4e5fBpqZl3QxR2s5h1Z2cNBOjgtawW/i3S6Bk7ayPB42VpeHSyma7G3/AIjoxa2eQXDOsD4RvfUeQCVVCbnV2jpmJ5esmp8ShbA+N1fXRVjZBILwFm82GrSbw69GvmWZU5e0NSI5q7CYKqviY1rZ983uKbN8UyMtpF/onOGyy5SKjnVQqedXcHWardGglr4sSkoS+op6TueBrphvUcpc8umIzb/SsBwAnhtbTjLV09FVUWIsfWiaV1TBOHiOSjnNySy4Pg3OhvAC5uo2EAFUNo/Fe91DaPxTcHXNzjFpcOwbFqwuAh3xjKRpB8KtcwMLhtb4UN/qO2FcxuOEknhJNyTtJ2rFOIuLBGZXmMHOERkdvYdp8IMvYHSdPOrRqBtH4psTLEssM+hwyljjdFLh0hlZUZzXZz87Oa5rbaCDY6b6luardIoZnMq58GhlxRgbaffXNp3yNtmyPZwkWFgQSLAZy5kZxtH4qkyjaPxU2OsO3X2CprakUGf3XS0tOIZZWuYN6M98/wAHwmuE1rcxWC7L2kgp548KwtuHz1TCyapfKZnRtOtsV9WvRqA12XOInN4XN/EKt9Q3gI/FWSe4keR+UzcOndI6kp6uKSJ0EkUwGdvbtDgxxBzbi4IIII0La4/l9TOoZqDDcObh8NS4Oqnl++PkAt4DbahoAuTquABe6gJlG0KgvG0JbsS35YNiwc4XTQOhfPJvldVmQF1SOLaALtboaLX1Aj6RWuyMx4YfiFNWmMzCAykxNcGF+fC9msg28e/mWizhtTOG1QbOpxQPrn1mYQH1rqvergkAz75mX28F10DF90jCKuV09RgAmmcADK+oaXENFh9HYFyvOS6irb+xfa2HfwIf8qP/AIhfFT9PqX2rh38GH/Kj/wCIUGQuUbosBhxBkzdBfmPB2EjN9rL+ddXUE3V6Eup4pwNMbix1tjrEE+dpH9SETWjnEkccg1SMa8dDgD+qvLQ5DVG+YfTO2Nc3zNe4D1ALfICIiAsHG8KirKaalmBMU8ZjeAbEA6iDwEGxHQs5EHCKncCmzjvWIRGO/g77C8Ptz2dZWu8FVcvp+qk7V3xEHAu8FVcvp+qk7U7wNVy+n6qTtXfUQcC7wNVy+n6qTtTvA1XL6fqpO1d9RBwLvA1XL6bqpO1ed4Gq5fT9VJ2rvyIOA94Cq5fT9VJ2p3garl9P1Unau/Ig4D3gKrl9P1UnaneBquX03VSdq78iDgPeBquX03VSdq97wNVy+m6qTtXfUQcC7wNVy+n6qTtTvA1XL6bqpO1d9RBwLvA1XL6bqpO1O8DVcvpuqk7V31EHA+8FVcvp+qk7U7wVVy+m6qTtXfEQcWye3CRFPHLV1jZoo3NfvMMbmb4QbgOcToHQF2gBeogLGxKhZUQyQSC7JGlptrGxw5wbEdCyUQavJrCe46WKmzs8x5932tnZz3Ovbg1raIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIg//Z" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h1>Samsung Galaxy Tab S9 FE</h1>
+                <p class="price">Rs 31,999/-</p>
+                <p class="description">The Samsung Galaxy Tab S9 FE is a high-performance tablet featuring a 27.69 cm (WQXGA) display with a 2304 x 1440 resolution for crisp visuals. It comes with 128 GB of storage, providing ample space for apps, media, and files. Ideal for productivity and entertainment, this tablet offers a seamless user experience with Samsung’s signature quality and innovation.</p>
+                <a href="https://www.samsung.com/in/tablets/galaxy-tab-s9-fe/buy/?cid=in_pd_ppc_google-search_tablets_sustain_tabrange-q1-25_search-text-ads_none_none-1ur-458617l-na-733023630160-22128960430-171318092537-kwd-2087398010053-samsung%20galaxy%20tab%20s9%20fe-e--g--&gad_source=1&gclid=CjwKCAiA5eC9BhAuEiwA3CKwQskqacEoQ8BVq3yqbgHC1Igm0v0h5NLkcc8QeQ-K5oeWdOAmTQ1pxRoCv-MQAvD_BwE" class="add-to-cart">Add to Cart</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; Samsung-S9</p>
+    </footer>
+</body>
+</html>
